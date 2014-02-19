@@ -5,7 +5,7 @@ shinyServer(function(input, output) {
 
   # a large table, reative to input$show_vars
   output$mytable1 = renderDataTable({
-    read.csv("Data/RegularSeasRank.csv")
+    read.csv("Data/RegularSeasRank.csv") 
   }, options = list(bCaseInsensitive=TRUE))
 
   # sorted columns are colored now because CSS are attached to them
