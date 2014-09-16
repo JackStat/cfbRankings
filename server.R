@@ -1,16 +1,34 @@
-require(shiny)
-require(plyr) 
+
+# This is the server logic for a Shiny web application.
+# You can find out more about building applications with Shiny here:
+#
+# http://shiny.rstudio.com
+#
+
+
+library(shiny)
+load("Data/AllRankings.RData")
+
+AllRankings$YearWeek <- paste0(AllRankings$Year, " Week-", AllRankings$Week)
+
 
 shinyServer(function(input, output) {
+  
+  
+  output$yearFilter <- renderUI({
+    selectizeInput(inputId = 'filterSelect'
+                   , label = 'Year'
+                   , choices = unique(AllRankings$YearWeek)
+                   , selected = max(AllRankings$YearWeek)
+                   , multiple=FALSE
+                   , width = '100%')
+  })
+    
+  
+  output$RankingsDT <- renderDataTable({
+    
+    subset(AllRankings, YearWeek == input$filterSelect)[,-c(10:12)]
 
-  # a large table, reative to input$show_vars
-  output$mytable1 = renderDataTable({
-    read.csv("Data/RegularSeasRank.csv") 
-  }, options = list(bCaseInsensitive=TRUE))
-
-  # sorted columns are colored now because CSS are attached to them
-  output$mytable2 = renderDataTable({
-    read.csv("Data/Bowl2013Predictions.csv")
-  }, options = list(aLengthMenu = c(10, 25, 50, 100), iDisplayLength = 100, bCaseInsensitive=TRUE))
-
+  })
+  
 })
