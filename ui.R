@@ -7,10 +7,20 @@
 
 library(shiny)
 
-shinyUI(navbarPage("Tyler Hunt's College Football Rankings"
-  ,tabPanel("Rankings"
-            ,tags$head(tags$style("tfoot {display: table-header-group;}"))            
-            ,wellPanel(uiOutput(outputId = "yearFilter"))
-              ,dataTableOutput("RankingsDT")
+shinyUI(
+  navbarPage("Tyler Hunt's College Football Rankings"
+     ,tabPanel(
+       "Rankings"
+       ,tags$head(tags$style("#RankingsDT tfoot {display: table-header-group;}"))  
+       ,tags$head(includeScript("google-analytics.js"))
+       ,wellPanel(uiOutput(outputId = "yearFilter"))
+       ,dataTableOutput("RankingsDT")
+      )
+     ,tabPanel(
+       "Predictions"
+       ,tags$style(type="text/css", '#PredictionsDT tfoot {display:none;}')
+       ,wellPanel(uiOutput(outputId = "teamFilter"))
+       ,dataTableOutput("PredictionsDT")
+      )
+    )
   )
-))
