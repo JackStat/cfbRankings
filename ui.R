@@ -22,7 +22,8 @@ shinyUI(
            ,br()
            ,br()
            ,wellPanel(
-             selectizeInput(inputId = 'filterSelect'
+             h5('Updated as of September 20, 2014')
+             ,selectizeInput(inputId = 'filterSelect'
                             , label = 'Year'
                             , choices = unique(AllRankings$YearWeek)
                             , selected = max(AllRankings$YearWeek)
@@ -45,7 +46,8 @@ shinyUI(
            ,br()
            ,br()
            ,wellPanel(
-             selectInput(inputId = 'filterSelect2'
+             h5('Updated as of September 20, 2014')
+             ,selectInput(inputId = 'filterSelect2'
                          , label = 'Team'
                          , choices = unique(Predictions$Team)
                          , selected = sample(Predictions$Team,1)
