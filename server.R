@@ -36,8 +36,8 @@ shinyServer(function(input, output) {
     Preds()
         
   }, options=list(
-    bSortClasses = TRUE
-    ,bPaginate = FALSE
+#     bSortClasses = TRUE
+    bPaginate = FALSE
     ,bFilter = FALSE
     )
   )  
