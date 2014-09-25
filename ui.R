@@ -18,12 +18,23 @@ shinyUI(
 #         ,tags$head(tags$style("#RankingsDT tfoot {display: table-header-group;}"))  
 #         ,tags$style(type="text/css", '.navbar .brand { color: #BE0303 }')
         ,tags$style(type="text/css", '.navbar { opacity: .90 }')
-        ,HTML("<link href='http://fonts.googleapis.com/css?family=Abel' rel='stylesheet' type='text/css'>")
-        ,tags$style(type="text/css", "body {font-family: 'Abel', sans-serif; }")
+        ,tags$link(
+          rel = "stylesheet", 
+          href="http://fonts.googleapis.com/css?family=Abel"
+        )
+        ,tags$style(type="text/css", "body{font-family: 'Abel', sans-serif; }")
         ,tags$style(type="text/css", ".selectize-dropdown, .selectize-input, .selectize-input input {font-family: 'Abel', sans-serif; }")
-        ,tags$style(type="text/css", 'a { color: #BE0303;}')
+#         ,tags$style(type="text/css", 'a { color: #BE0303;}')
         ,tags$style(type="text/css", '#RankingsDT .dataTables_wrapper { font-size: 12px }')
         ,tags$style(type="text/css", '#PredictionsDT .dataTables_info {display:none;}')
+
+        ,tagList(
+          singleton(tags$head(tags$script(src='//cdnjs.cloudflare.com/ajax/libs/datatables/1.9.4/jquery.dataTables.min.js',type='text/javascript'))),
+          singleton(tags$head(tags$script(src='//cdnjs.cloudflare.com/ajax/libs/datatables-tabletools/2.1.5/js/TableTools.min.js',type='text/javascript'))),
+          singleton(tags$head(tags$script(src='//cdnjs.cloudflare.com/ajax/libs/datatables-tabletools/2.1.5/js/ZeroClipboard.min.js',type='text/javascript'))),
+          singleton(tags$head(tags$link(href='//cdnjs.cloudflare.com/ajax/libs/datatables-tabletools/2.1.5/css/TableTools.min.css',rel='stylesheet',type='text/css'))),
+          singleton(tags$script(HTML("if (window.innerHeight < 400) alert('Screen too small');")))
+        )
 
         ,tags$head(includeScript("google-analytics.js"))
        
@@ -39,14 +50,14 @@ shinyUI(
                             , multiple=FALSE
                             , width = '100%')
              ,br()
-             ,HTML("<p> Photograph by Giovanni Arteaga. </p>")
-             ,style = "background-color: #FFFfff; opacity: .9;"
+             ,HTML("<a href = 'https://www.flickr.com/photos/giophotos/'> <small> Background by Giovanni Arteaga. </small></a>")
+             ,style = "background-color: #FFFFFF; opacity: .9;"
              )
            )
          ,column(
            10
            ,wellPanel(dataTableOutput("RankingsDT")
-                      ,style = "background-color: #FFFfff; opacity: .9;")
+                      ,style = "background-color: #FFFFFF; opacity: .9;")
           )
         )
       )
@@ -64,8 +75,8 @@ shinyUI(
                          , multiple=FALSE
                          , width = '100%')
              ,br()
-             ,HTML("<p> Photograph by Giovanni Arteaga. </p>")
-             ,style = "background-color: #FFFfff; opacity: .9;"
+             ,HTML("<a href = 'https://www.flickr.com/photos/giophotos/'> <small> Background by Giovanni Arteaga. </small></a>")
+             ,style = "background-color: #FFFFFF; opacity: .9;"
             )
            )
          ,column(
@@ -73,7 +84,7 @@ shinyUI(
            ,tags$style(type="text/css", '#PredictionsDT .dataTables_wrapper { font-size: 12px }')
            ,tags$style(type="text/css", '#PredictionsDT tfoot {display:none;}')
            ,wellPanel(dataTableOutput("PredictionsDT")
-                      ,style = "background-color: #FFFfff; opacity: .9;")
+                      ,style = "background-color: #FFFFFF; opacity: .9;")
            
           )
         )

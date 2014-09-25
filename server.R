@@ -21,7 +21,21 @@ shinyServer(function(input, output) {
     
     subset(AllRankings, YearWeek == input$filterSelect)[,-c(10:12)]
 
-  })
+  }, options = list(
+    "sDom" = 'T<"clear">lfrtip',
+    "oTableTools" = list(
+      "sSwfPath" = "//cdnjs.cloudflare.com/ajax/libs/datatables-tabletools/2.1.5/swf/copy_csv_xls.swf",
+      "aButtons" = list(
+        "copy",
+        "print",
+        list("sExtends" = "collection",
+             "sButtonText" = "Save",
+             "aButtons" = c("csv","xls")
+        )
+      )
+    )
+  )
+  )
   
   
   
@@ -35,11 +49,22 @@ shinyServer(function(input, output) {
         
     Preds()
         
-  }, options=list(
-#     bSortClasses = TRUE
+  }, options = list(
     bPaginate = FALSE
     ,bFilter = FALSE
+    ,"sDom" = 'T<"clear">lfrtip'
+    ,"oTableTools" = list(
+      "sSwfPath" = "//cdnjs.cloudflare.com/ajax/libs/datatables-tabletools/2.1.5/swf/copy_csv_xls.swf"
+      ,"aButtons" = list(
+        "copy"
+        ,"print"
+        ,list("sExtends" = "collection"
+             ,"sButtonText" = "Save"
+             ,"aButtons" = c("csv","xls")
+        )
+      )
     )
+  )
   )  
   
 })
