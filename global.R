@@ -1,8 +1,8 @@
 library(dplyr)
 library(googleVis)
 
-load("Data/AllRankings.RData")
-load("Data/Predictions.RData")
+load("Data/AllRankings.RData", .GlobalEnv)
+load("Data/Predictions.RData", .GlobalEnv)
 
 
 Predictions <-
