@@ -14,7 +14,8 @@ shinyUI(
 #     ,theme='bootstrap.css'
       ,tabPanel(
         "Rankings"
-        ,tags$style("body {background-image: url('10-20-30.jpg');}")
+        ,tags$style("body {background-image: url('10-20-30.jpg');
+                            background-size: 140%}")
 #         ,tags$head(tags$style("#RankingsDT tfoot {display: table-header-group;}"))  
 #         ,tags$style(type="text/css", '.navbar .brand { color: #BE0303 }')
         ,tags$style(type="text/css", '.navbar { opacity: .90 }')
