@@ -1,8 +1,13 @@
 library(dplyr)
 library(googleVis)
+library(lubridate)
+library(lme4)
+library(tidyr)
 
+load("Data/AllGames.RData", .GlobalEnv)
 load("Data/AllRankings.RData", .GlobalEnv)
 load("Data/Predictions.RData", .GlobalEnv)
+meta<-read.csv("Data/TeamMeta.csv")
 
 
 Predictions <-
