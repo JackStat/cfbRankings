@@ -93,36 +93,6 @@ shinyUI(
           )
         )
       )
-    ,tabPanel(
-      "Home Advantage"
-      ,fluidPage(
-        column(
-          3
-          ,wellPanel(
-            h5('Updated as of September 20, 2014')
-            ,sliderInput(inputId = 'sliderYear'
-                         , label = 'Year'
-                         , min = 1996
-                         , max = 2014
-                         , value = c(2012, 2013)
-                         , format = '####'
-                         )
-            ,br()
-            ,HTML("<a href = 'https://www.flickr.com/photos/giophotos/'> <small> Background by Giovanni Arteaga. </small></a>")
-            ,style = "background-color: #FFFFFF; opacity: .9;"
-          )
-        )
-        ,column(
-          9
-          ,tags$style(type="text/css", '#HomeAdvDT .dataTables_wrapper { font-size: 12px }')
-          ,wellPanel(
-            dataTableOutput("HomeAdvDT")
-            ,style = "background-color: #FFFFFF; opacity: .9;"
-            ,br()
-            )
-          )
-        )
-      )
     )
   )
 
