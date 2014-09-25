@@ -56,8 +56,11 @@ shinyUI(
            )
          ,column(
            10
-           ,wellPanel(dataTableOutput("RankingsDT")
-                      ,style = "background-color: #FFFFFF; opacity: .9;")
+           ,wellPanel(
+             dataTableOutput("RankingsDT")
+             ,style = "background-color: #FFFFFF; opacity: .9;"
+             ,br()
+            )
           )
         )
       )
