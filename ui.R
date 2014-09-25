@@ -86,7 +86,7 @@ shinyUI(
          ,column(
            9
            ,tags$style(type="text/css", '#PredictionsDT .dataTables_wrapper { font-size: 12px }')
-           ,tags$style(type="text/css", '#PredictionsDT tfoot {display:none;}')
+           ,tags$style(type="text/css", '#PredictionsDT tfoot {display:none;}')           
            ,wellPanel(dataTableOutput("PredictionsDT")
                       ,style = "background-color: #FFFFFF; opacity: .9;")
            
