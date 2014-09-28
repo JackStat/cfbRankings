@@ -5,8 +5,8 @@ library(dplyr)
 # library(tidyr)
 
 # load("Data/AllGames.RData", .GlobalEnv)
-load("Data/AllRankings.RData", .GlobalEnv)
-load("Data/Predictions.RData", .GlobalEnv)
+load("Data/AllRankings.RData")
+load("Data/Predictions.RData")
 # meta<-read.csv("Data/TeamMeta.csv")
 
 
