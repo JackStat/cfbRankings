@@ -17,7 +17,15 @@ Predictions <-
     ,OppMargin = round(OppMargin, 2)
     ,Prediction = paste0(100*round(Prediction, 4), " %")
   ) %>% 
-  arrange(Team)
+  arrange(Team) %>%
+  select(
+    Team
+    ,Opponent
+    ,Date
+    ,Week
+    ,Prediction
+#     ,OppMargin
+    )
 
 AllRankings <-
   AllRankings %>%
