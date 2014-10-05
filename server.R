@@ -7,6 +7,7 @@
 
 
 library(shiny)
+library(dplyr)
 
 
 shinyServer(function(input, output) {
@@ -18,7 +19,19 @@ shinyServer(function(input, output) {
   
   output$RankingsDT <- renderDataTable({
     
-    subset(AllRankings, YearWeek == input$filterSelect)[,-c(10:12)]
+    AllRankings %>%
+      dplyr::filter(YearWeek == input$filterSelect) %>%
+      select(
+        Ranking
+        ,Team
+        ,Rating
+        ,Margin
+        ,Margin.Rank
+        ,WinPotential
+        ,WinPotential.Rank
+        ,Elo
+        ,Elo.Rank
+        )
 
   }, options = list(
     "sDom" = 'T<"clear">lfrtip',
