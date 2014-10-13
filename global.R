@@ -15,7 +15,7 @@ Predictions <-
   mutate(
     Team = as.character(Team)
     ,OppMargin = round(OppMargin, 2)
-    ,Prediction = paste0(100*round(Prediction, 4), " %")
+    ,Prediction = paste0(100*round(neurPred, 4), " %")
   ) %>% 
   arrange(Team) %>%
   select(
