@@ -43,7 +43,7 @@ shinyUI(
          column(
            3
            ,wellPanel(
-             h5('Updated as of October 20, 2014')
+             h5('Updated as of October 26, 2014')
              ,selectizeInput(inputId = 'filterSelect'
                             , label = 'Year'
                             , choices = unique(AllRankings$YearWeek)
@@ -71,7 +71,7 @@ shinyUI(
          column(
            3
            ,wellPanel(
-             h5('Updated as of October 20, 2014')
+             h5('Updated as of October 26, 2014')
              ,selectInput(inputId = 'filterSelect2'
                          , label = 'Team'
                          , choices = unique(Predictions$Team)
