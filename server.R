@@ -25,12 +25,14 @@ shinyServer(function(input, output) {
         Ranking
         ,Team
         ,Rating
+        ,Wins
+        ,Losses
         ,Margin
-        ,Margin.Rank
+#         ,Margin.Rank
         ,WinPotential
-        ,WinPotential.Rank
+#         ,WinPotential.Rank
         ,Elo
-        ,Elo.Rank
+#         ,Elo.Rank
         )
 
   }, options = list(
