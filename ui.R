@@ -47,7 +47,7 @@ shinyUI(
              ,selectizeInput(inputId = 'filterSelect'
                             , label = 'Year'
                             , choices = unique(AllRankings$YearWeek)
-                            , selected = max(AllRankings$YearWeek)
+                            , selected = WeekSelect[1]
                             , multiple=FALSE
                             , width = '100%')
              ,br()

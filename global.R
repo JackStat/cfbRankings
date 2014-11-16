@@ -36,3 +36,12 @@ AllRankings <-
     ,WinPotential = round(WinPotential, 2)
     ,Elo = round(Elo, 2)
   )
+
+
+WeekSelect<-
+filter(AllRankings, Year == max(Year)) %>%
+  filter(Week == max(Week)) %>%
+  dplyr::select(YearWeek) %>%
+  unique
+
+
